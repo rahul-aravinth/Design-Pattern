@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesignPattern{
+namespace FactoryMethodDesignPattern{
     class MainApp{
         static void Main(){
             CivilEngineer engineer1 = new BeachHouse();
@@ -28,13 +28,13 @@ namespace DesignPattern{
 
     //Creator
     abstract class CivilEngineer{
-        private List<Floor> planning = new List<Floor>();
+        private List<Floor> planning = new List<Floor>(); // Encap
+        public List<Floor> Floors { get { return planning; } } // Encap
         public CivilEngineer(){
             this.Construction();
         }
         //Factory Method
         public abstract void Construction();
-        public List<Floor> Floors { get { return planning; } } 
     }
 
     //Concrete Creator
