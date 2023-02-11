@@ -1,36 +1,43 @@
 ﻿using System;
 
-namespace FactoryMethodDesignPattern{
-    class MainApp{
-        static void Main(){
+namespace FactoryMethodDesignPattern
+{
+    class MainApp
+    {
+        static void Main()
+        {
             CivilEngineer engineer1 = new BeachHouse();
             CivilEngineer engineer2 = new Mansion();
 
             PrintEngineers(engineer1);
             PrintEngineers(engineer2);
         }
-        private static void PrintEngineers(CivilEngineer engineer){
+        private static void PrintEngineers(CivilEngineer engineer)
+        {
             Console.WriteLine(engineer.GetType().Name + " - Building Guide");
-            for(int i = 0; i < engineer.Floors.Count; i++){
+            for (int i = 0; i < engineer.Floors.Count; i++)
+            {
                 Console.WriteLine("  " + (i + 1) + " - " + engineer.Floors[i].GetType().Name);
-            }   
+            }
         }
     }
-    
+
     //Product
-    abstract class Floor{}
+    abstract class Floor { }
 
     //Concrete Product
-    class Parking : Floor{}
-    class SwimmingPool : Floor{}
-    class Room : Floor{}
-    class Roof : Floor{}
+    class Parking : Floor { }
+    class SwimmingPool : Floor { }
+    class Room : Floor { }
+    class Roof : Floor { }
 
     //Creator
-    abstract class CivilEngineer{
+    abstract class CivilEngineer
+    {
         private List<Floor> planning = new List<Floor>(); // Encap
         public List<Floor> Floors { get { return planning; } } // Encap
-        public CivilEngineer(){
+        public CivilEngineer()
+        {
             this.Construction();
         }
         //Factory Method

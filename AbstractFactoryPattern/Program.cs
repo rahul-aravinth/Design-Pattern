@@ -7,11 +7,13 @@ namespace AbstractFactoryDesignPattern
         static void Main()
         {
             int i = 0;
-            while(i != 3){
+            while (i != 3)
+            {
                 i = VehicleServiceFun();
             }
         }
-        private static int VehicleServiceFun(){
+        private static int VehicleServiceFun()
+        {
             try
             {
                 int vehType = 0;
@@ -35,7 +37,8 @@ namespace AbstractFactoryDesignPattern
                 PrintService(vehicleService);
                 Console.WriteLine("----------------");
             }
-            catch(NotImplementedException ex){
+            catch (NotImplementedException ex)
+            {
                 Console.WriteLine(ex.Message);
             }
             return 0;
@@ -52,9 +55,19 @@ namespace AbstractFactoryDesignPattern
         }
     }
 
-    //Abstract Obj
+    //Product
     abstract class Service { }
     abstract class WaterWash { }
+
+    //Concrete Product
+    class TyreInspection : Service { }
+    class OilChange : Service { }
+    class BrakeAndClutchAdjust : Service { }
+    class WiperReplace : Service { }
+    class LightsCheck : Service { }
+
+    class ManualWaterWash : WaterWash { }
+    class AutomaticWaterWash : WaterWash { }
 
     //Abstract Factory class
     abstract class VehicleService
@@ -74,16 +87,6 @@ namespace AbstractFactoryDesignPattern
         public abstract void DoService();
         public abstract void DoWaterWash();
     }
-
-    //Concrete Product
-    class TyreInspection : Service { }
-    class OilChange : Service { }
-    class BrakeAndClutchAdjust : Service { }
-    class WiperReplace : Service { }
-    class LightsCheck : Service { }
-
-    class ManualWaterWash : WaterWash { }
-    class AutomaticWaterWash : WaterWash { }
 
     //Concrete Factory
     class TwoWheeler : VehicleService
