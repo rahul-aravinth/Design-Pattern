@@ -1,0 +1,23 @@
+{
+    "Parts":[
+      {
+        "Id":10000001,
+        "Type":"Spare",
+        "Desc":"Brake Shoe",
+        "UOM":"Each",
+        "MRP":150.00
+      },
+      {
+        "Id":20000001,
+        "Type":"Oil",
+        "Desc":"Engine Oil",
+        "MRP":100.00
+      },
+      {
+        "Id":30000001,
+        "Type":"Accessory",
+        "Desc":"Bike Mirror Cover",
+        "MRP":30.00
+      }
+      ]
+  }
